@@ -14,6 +14,8 @@ RecyclerView/Scroll view mast have CoordinatorLayout parent.
 
 For ease to use added BottomSheetBehaviorRecyclerManager class
 
+
+
 ```
     BottomSheetBehaviorRecyclerManager manager = 
     new BottomSheetBehaviorRecyclerManager(parentCoordinator, behavior, bottomsheetview);
@@ -21,5 +23,12 @@ For ease to use added BottomSheetBehaviorRecyclerManager class
     manager.addControl(recyclerview);
     manager.create();
 ```
+
+#### If You have OnTouchListener on your Recycler/ScrollView do this:
+
+```
+    manager.onTouch(View view, MotionEvent motionEvent); 
+```
+
 
 #### For other details see example application

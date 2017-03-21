@@ -1,5 +1,6 @@
 package com.matcontrol.control;
 
+import android.graphics.Rect;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.view.ViewCompat;
 import android.view.MotionEvent;
@@ -60,10 +61,16 @@ public class BottomSheetBehaviorRecyclerManager {
         mTouchEventListener = new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                mBehavior.onLayoutChild(mParent, mBottomSheetView, ViewCompat.LAYOUT_DIRECTION_LTR);
-                mBehavior.updateScroller(view);
+                onTouch(view, motionEvent);
                 return false;
             }
         };
     }
+
+    public void onTouch(View view, MotionEvent motionEvent) {
+        mBehavior.onLayoutChild(mParent, mBottomSheetView, ViewCompat.LAYOUT_DIRECTION_LTR);
+        mBehavior.updateScroller(view);
+    }
+
+
 }
