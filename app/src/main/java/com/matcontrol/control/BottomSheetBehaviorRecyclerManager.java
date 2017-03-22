@@ -61,13 +61,13 @@ public class BottomSheetBehaviorRecyclerManager {
         mTouchEventListener = new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                onTouch(view, motionEvent);
+                onTouchScroll(view, motionEvent);
                 return false;
             }
         };
     }
 
-    public void onTouch(View view, MotionEvent motionEvent) {
+    public void onTouchScroll(View view, MotionEvent motionEvent) {
         mBehavior.onLayoutChild(mParent, mBottomSheetView, ViewCompat.LAYOUT_DIRECTION_LTR);
         mBehavior.updateScroller(view);
     }

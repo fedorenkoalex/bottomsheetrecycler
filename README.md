@@ -27,7 +27,7 @@ For ease to use added BottomSheetBehaviorRecyclerManager class
 #### If You have OnTouchListener on your Recycler/ScrollView do this:
 
 ```
-    manager.onTouch(View view, MotionEvent motionEvent); 
+    manager.onTouchScroll(View view, MotionEvent motionEvent); 
 ```
 
 
