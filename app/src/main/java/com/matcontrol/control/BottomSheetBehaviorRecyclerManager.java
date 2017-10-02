@@ -36,6 +36,7 @@ public class BottomSheetBehaviorRecyclerManager {
             mViews = new ArrayList<>();
         }
         mViews.add(recyclerView);
+        mBehavior.setNestedScrollingChildRefList(mViews);
     }
 
     public void create() {
@@ -69,8 +70,5 @@ public class BottomSheetBehaviorRecyclerManager {
 
     public void onTouchScroll(View view, MotionEvent motionEvent) {
         mBehavior.onLayoutChild(mParent, mBottomSheetView, ViewCompat.LAYOUT_DIRECTION_LTR);
-        mBehavior.updateScroller(view);
     }
-
-
 }

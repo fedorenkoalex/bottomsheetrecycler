@@ -15,7 +15,12 @@ import java.util.List;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
+    public interface OnClikInterface {
+        void onClick();
+    }
+
     private List<TempModel> mDataset = new ArrayList<>();
+    private static OnClikInterface mOnClikInterface;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -24,11 +29,22 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         public ViewHolder(View v) {
             super(v);
             mTextView = (TextView) v.findViewById(R.id.list_text);
+            v.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mOnClikInterface != null)
+                        mOnClikInterface.onClick();
+                }
+            });
         }
 
         public void update(TempModel model) {
             mTextView.setText(model.getName());
         }
+    }
+
+    public void setOnClikInterface(OnClikInterface onClikInterface) {
+        mOnClikInterface = onClikInterface;
     }
 
     @Override

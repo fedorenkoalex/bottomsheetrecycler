@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.matcontrol.control.BottomSheetBehaviorRecyclerManager;
 import com.matcontrol.control.BottomSheetBehaviorv2;
@@ -68,9 +69,21 @@ public class RecyclerActivity extends AppCompatActivity {
         });
 
         mAdapterLeft = new RecyclerAdapter();
+        mAdapterLeft.setOnClikInterface(new RecyclerAdapter.OnClikInterface() {
+            @Override
+            public void onClick() {
+                Toast.makeText(RecyclerActivity.this, "fsfsf", Toast.LENGTH_SHORT).show();
+            }
+        });
         mBottomSheetRecyclerLeft.setAdapter(mAdapterLeft);
 
         mAdapterRight = new RecyclerAdapter();
+        mAdapterRight.setOnClikInterface(new RecyclerAdapter.OnClikInterface() {
+            @Override
+            public void onClick() {
+                Toast.makeText(RecyclerActivity.this, "fsfsf", Toast.LENGTH_SHORT).show();
+            }
+        });
         mBottomSheetRecyclerRight.setAdapter(mAdapterRight);
 
         List<TempModel> models = new ArrayList<>();
