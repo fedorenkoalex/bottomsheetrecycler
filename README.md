@@ -2,7 +2,8 @@
 BottomSheet Multiple RecyclerView
 
 #### Last Changes:
- - fixed click issue in recycle view
+ 
+ - fixed click issue in recycle view by @mpetlyuk
 
 #### One of the solutions of multiple RecyclerView/ScrollView in BottomSheetBehavior
 #### Usage
