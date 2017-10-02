@@ -69,19 +69,19 @@ public class RecyclerActivity extends AppCompatActivity {
         });
 
         mAdapterLeft = new RecyclerAdapter();
-        mAdapterLeft.setOnClikInterface(new RecyclerAdapter.OnClikInterface() {
+        mAdapterLeft.setOnClickInterface(new RecyclerAdapter.OnClickInterface() {
             @Override
-            public void onClick() {
-                Toast.makeText(RecyclerActivity.this, "fsfsf", Toast.LENGTH_SHORT).show();
+            public void onClick(TempModel tempModel) {
+                Toast.makeText(RecyclerActivity.this, "Clicked Left ".concat(tempModel.getName()), Toast.LENGTH_SHORT).show();
             }
         });
         mBottomSheetRecyclerLeft.setAdapter(mAdapterLeft);
 
         mAdapterRight = new RecyclerAdapter();
-        mAdapterRight.setOnClikInterface(new RecyclerAdapter.OnClikInterface() {
+        mAdapterRight.setOnClickInterface(new RecyclerAdapter.OnClickInterface() {
             @Override
-            public void onClick() {
-                Toast.makeText(RecyclerActivity.this, "fsfsf", Toast.LENGTH_SHORT).show();
+            public void onClick(TempModel tempModel) {
+                Toast.makeText(RecyclerActivity.this, "Clicked Right ".concat(tempModel.getName()), Toast.LENGTH_SHORT).show();
             }
         });
         mBottomSheetRecyclerRight.setAdapter(mAdapterRight);

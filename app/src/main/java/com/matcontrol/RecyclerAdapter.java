@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -15,36 +16,39 @@ import java.util.List;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
-    public interface OnClikInterface {
-        void onClick();
+    public interface OnClickInterface {
+        void onClick(TempModel item);
     }
 
     private List<TempModel> mDataset = new ArrayList<>();
-    private static OnClikInterface mOnClikInterface;
+    private static OnClickInterface mOnClickInterface;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView mTextView;
+        public RelativeLayout mContainer;
 
         public ViewHolder(View v) {
             super(v);
             mTextView = (TextView) v.findViewById(R.id.list_text);
-            v.setOnClickListener(new View.OnClickListener() {
+            mContainer = (RelativeLayout) v.findViewById(R.id.item_container);
+
+        }
+
+        public void update(final TempModel model) {
+            mTextView.setText(model.getName());
+            mContainer.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (mOnClikInterface != null)
-                        mOnClikInterface.onClick();
+                    if (mOnClickInterface != null)
+                        mOnClickInterface.onClick(model);
                 }
             });
         }
-
-        public void update(TempModel model) {
-            mTextView.setText(model.getName());
-        }
     }
 
-    public void setOnClikInterface(OnClikInterface onClikInterface) {
-        mOnClikInterface = onClikInterface;
+    public void setOnClickInterface(OnClickInterface onClickInterface) {
+        mOnClickInterface = onClickInterface;
     }
 
     @Override
