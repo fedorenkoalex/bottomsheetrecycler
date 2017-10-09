@@ -69,51 +69,35 @@ public class RecyclerActivity extends AppCompatActivity {
         });
 
         mAdapterLeft = new RecyclerAdapter();
+        mBottomSheetRecyclerLeft.setAdapter(mAdapterLeft);
         mAdapterLeft.setOnClickInterface(new RecyclerAdapter.OnClickInterface() {
             @Override
             public void onClick(TempModel tempModel) {
-                Toast.makeText(RecyclerActivity.this, "Clicked Left ".concat(tempModel.getName()), Toast.LENGTH_SHORT).show();
+                Toast.makeText(RecyclerActivity.this, "Clicked ".concat(tempModel.getName()), Toast.LENGTH_SHORT).show();
             }
         });
-        mBottomSheetRecyclerLeft.setAdapter(mAdapterLeft);
 
         mAdapterRight = new RecyclerAdapter();
+        mBottomSheetRecyclerRight.setAdapter(mAdapterRight);
         mAdapterRight.setOnClickInterface(new RecyclerAdapter.OnClickInterface() {
             @Override
             public void onClick(TempModel tempModel) {
-                Toast.makeText(RecyclerActivity.this, "Clicked Right ".concat(tempModel.getName()), Toast.LENGTH_SHORT).show();
+                Toast.makeText(RecyclerActivity.this, "Clicked ".concat(tempModel.getName()), Toast.LENGTH_SHORT).show();
             }
         });
-        mBottomSheetRecyclerRight.setAdapter(mAdapterRight);
 
-        List<TempModel> models = new ArrayList<>();
-        models.add(new TempModel("a"));
-        models.add(new TempModel("b"));
-        models.add(new TempModel("c"));
-        models.add(new TempModel("d"));
-        models.add(new TempModel("f"));
-        models.add(new TempModel("e"));
-        models.add(new TempModel("k"));
-        models.add(new TempModel("l"));
-        models.add(new TempModel("a"));
-        models.add(new TempModel("b"));
-        models.add(new TempModel("c"));
-        models.add(new TempModel("d"));
-        models.add(new TempModel("f"));
-        models.add(new TempModel("e"));
-        models.add(new TempModel("k"));
-        models.add(new TempModel("l"));
-        models.add(new TempModel("a"));
-        models.add(new TempModel("b"));
-        models.add(new TempModel("c"));
-        models.add(new TempModel("d"));
-        models.add(new TempModel("f"));
-        models.add(new TempModel("e"));
-        models.add(new TempModel("k"));
-        models.add(new TempModel("l"));
+        List<TempModel> modelsLeft = new ArrayList<>();
+        for (int i = 0; i < 20; i++) {
+            modelsLeft.add(new TempModel(i + " left"));
+        }
+        List<TempModel> modelsRight = new ArrayList<>();
+        for (int i = 0; i < 20; i++) {
+            modelsRight.add(new TempModel(i + " right"));
+        }
 
-        mAdapterRight.update(models);
-        mAdapterLeft.update(models);
+
+        mAdapterLeft.update(modelsLeft);
+        mAdapterRight.update(modelsRight);
 
         //helper to rule scrolls
         BottomSheetBehaviorRecyclerManager manager = new BottomSheetBehaviorRecyclerManager(mParent, mBottomSheetBehavior, mBottomSheetView);

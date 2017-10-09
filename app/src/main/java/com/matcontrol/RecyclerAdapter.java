@@ -40,8 +40,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             mContainer.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (mOnClickInterface != null)
+                    if (mOnClickInterface != null) {
                         mOnClickInterface.onClick(model);
+                    }
                 }
             });
         }
