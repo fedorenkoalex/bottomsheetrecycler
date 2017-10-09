@@ -3,6 +3,7 @@ BottomSheet Multiple RecyclerView
 
 #### Last Changes:
  
+ - added BottomSheetDialog support
  - fixed click issue in recycle view by @mpetlyuk
 
 #### One of the solutions of multiple RecyclerView/ScrollView in BottomSheetBehavior
