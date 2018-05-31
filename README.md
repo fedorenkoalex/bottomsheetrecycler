@@ -11,6 +11,8 @@ BottomSheet Multiple RecyclerView
 
 [See demo apk](demo_apk/app-debug.apk)
 
+![Example:](gif_example/gifexample.gif)
+
 Copy com.matcontrol.control classes to Your project.
 
 Use BottomSheetBehaviorv2 instead BottomSheetBehavior
