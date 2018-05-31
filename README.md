@@ -9,7 +9,7 @@ BottomSheet Multiple RecyclerView
 #### One of the solutions of multiple RecyclerView/ScrollView in BottomSheetBehavior
 #### Usage
 
-[See demo apk](/app-debug.apk)
+[See demo apk](demo_apk/app-debug.apk)
 
 Copy com.matcontrol.control classes to Your project.
 
