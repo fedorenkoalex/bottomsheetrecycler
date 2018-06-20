@@ -17,6 +17,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|top"
         android:clickable="true"
-        app:layout_behavior="com.matcontrol.control.BottomSheetBehaviorv2" />
+        app:layout_behavior="com.matcontrol.control.BottomSheetBehavior_v27" />
 </android.support.design.widget.CoordinatorLayout>
 
