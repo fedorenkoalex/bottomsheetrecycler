@@ -6,7 +6,7 @@
     android:layout_gravity="bottom"
     app:behavior_hideable="true"
     app:behavior_peekHeight="300dp"
-    app:layout_behavior="com.matcontrol.control.BottomSheetBehaviorv2">
+    app:layout_behavior="com.matcontrol.control.BottomSheetBehavior_v27">
 
 
     <LinearLayout

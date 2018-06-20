@@ -27,28 +27,28 @@ import android.widget.FrameLayout;
 /**
  * Base class for {@link android.app.Dialog}s styled as a bottom sheet.
  */
-public class BottomSheetDialogv2 extends AppCompatDialog {
+public class BottomSheetDialog_v25 extends AppCompatDialog {
 
-    private BottomSheetBehaviorv2<FrameLayout> mBehavior;
+    private BottomSheetBehavior_v27<FrameLayout> mBehavior;
     private FrameLayout mBottomSheetView;
 
     boolean mCancelable = true;
     private boolean mCanceledOnTouchOutside = true;
     private boolean mCanceledOnTouchOutsideSet;
 
-    public BottomSheetDialogv2(@NonNull Context context) {
+    public BottomSheetDialog_v25(@NonNull Context context) {
         this(context, 0);
     }
 
-    public BottomSheetDialogv2(@NonNull Context context, @StyleRes int theme) {
+    public BottomSheetDialog_v25(@NonNull Context context, @StyleRes int theme) {
         super(context, getThemeResId(context, theme));
         // We hide the title bar for any style configuration. Otherwise, there will be a gap
         // above the bottom sheet when it is expanded.
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
     }
 
-    protected BottomSheetDialogv2(@NonNull Context context, boolean cancelable,
-                                  OnCancelListener cancelListener) {
+    protected BottomSheetDialog_v25(@NonNull Context context, boolean cancelable,
+                                    OnCancelListener cancelListener) {
         super(context, cancelable, cancelListener);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         mCancelable = cancelable;
@@ -75,7 +75,7 @@ public class BottomSheetDialogv2 extends AppCompatDialog {
         super.setContentView(wrapInBottomSheet(0, view, params));
     }
 
-    public BottomSheetBehaviorv2 getBehavior() {
+    public BottomSheetBehavior_v27 getBehavior() {
         return mBehavior;
     }
 
@@ -116,7 +116,7 @@ public class BottomSheetDialogv2 extends AppCompatDialog {
         }
         mBottomSheetView = (FrameLayout) coordinator.findViewById(com.matcontrol.R.id.design_bottom_sheet);
 
-        mBehavior = BottomSheetBehaviorv2.from(mBottomSheetView);
+        mBehavior = BottomSheetBehavior_v27.from(mBottomSheetView);
         mBehavior.setBottomSheetCallback(mBottomSheetCallback);
         mBehavior.setHideable(mCancelable);
         if (params == null) {
@@ -189,12 +189,12 @@ public class BottomSheetDialogv2 extends AppCompatDialog {
         return themeId;
     }
 
-    private BottomSheetBehaviorv2.BottomSheetCallback mBottomSheetCallback
-            = new BottomSheetBehaviorv2.BottomSheetCallback() {
+    private BottomSheetBehavior_v27.BottomSheetCallback mBottomSheetCallback
+            = new BottomSheetBehavior_v27.BottomSheetCallback() {
         @Override
         public void onStateChanged(@NonNull View bottomSheet,
-                                   @BottomSheetBehaviorv2.State int newState) {
-            if (newState == BottomSheetBehaviorv2.STATE_HIDDEN) {
+                                   @BottomSheetBehavior_v27.State int newState) {
+            if (newState == BottomSheetBehavior_v27.STATE_HIDDEN) {
                 cancel();
             }
         }

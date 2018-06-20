@@ -19,10 +19,10 @@ public class BottomSheetBehaviorRecyclerManager {
     private View.OnTouchListener mTouchEventListener;
 
     private CoordinatorLayout mParent;
-    private BottomSheetBehaviorv2 mBehavior;
+    private ICustomBottomSheetBehavior<View> mBehavior;
     private View mBottomSheetView;
 
-    public BottomSheetBehaviorRecyclerManager(CoordinatorLayout mParent, BottomSheetBehaviorv2 mBehavior, View mBottomSheetView) {
+    public BottomSheetBehaviorRecyclerManager(CoordinatorLayout mParent, ICustomBottomSheetBehavior<View> mBehavior, View mBottomSheetView) {
         mViews = new ArrayList<>();
         this.mParent = mParent;
         this.mBehavior = mBehavior;

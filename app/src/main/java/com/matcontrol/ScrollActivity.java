@@ -3,21 +3,16 @@ package com.matcontrol;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ScrollView;
 
 import com.matcontrol.control.BottomSheetBehaviorRecyclerManager;
-import com.matcontrol.control.BottomSheetBehaviorv2;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.matcontrol.control.BottomSheetBehavior_v27;
 
 public class ScrollActivity extends AppCompatActivity {
 
-    private BottomSheetBehaviorv2 mBottomSheetBehavior;
+    private BottomSheetBehavior_v27 mBottomSheetBehavior;
     private View mBottomSheetView;
 
     private CoordinatorLayout mParent;
@@ -39,14 +34,14 @@ public class ScrollActivity extends AppCompatActivity {
         mScrollLeft = (ScrollView) findViewById(R.id.scroll_left);
         mScrollRight = (ScrollView) findViewById(R.id.scroll_right);
 
-        mBottomSheetBehavior = BottomSheetBehaviorv2.from(mBottomSheetView);
+        mBottomSheetBehavior = BottomSheetBehavior_v27.from(mBottomSheetView);
 
         mBottomSheetBehavior.setPeekHeight(150);
-        mBottomSheetBehavior.setState(BottomSheetBehaviorv2.STATE_COLLAPSED);
-        mBottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehaviorv2.BottomSheetCallback() {
+        mBottomSheetBehavior.setState(BottomSheetBehavior_v27.STATE_COLLAPSED);
+        mBottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior_v27.BottomSheetCallback() {
             @Override
             public void onStateChanged(View bottomSheet, int newState) {
-                if (newState == BottomSheetBehaviorv2.STATE_COLLAPSED) {
+                if (newState == BottomSheetBehavior_v27.STATE_COLLAPSED) {
                     //  mBottomSheetBehavior.setPeekHeight(0);
                 }
             }
