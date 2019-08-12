@@ -1,10 +1,11 @@
 package com.matcontrol.control;
 
 import android.graphics.Rect;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.v4.view.ViewCompat;
 import android.view.MotionEvent;
 import android.view.View;
+
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.view.ViewCompat;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,16 +14,16 @@ import java.util.List;
  * Created by fedor on 21.03.2017.
  */
 
-public class BottomSheetBehaviorRecyclerManager {
+public class  BottomSheetBehaviorRecyclerManager <T extends View>{
 
     private List<View> mViews;
     private View.OnTouchListener mTouchEventListener;
 
     private CoordinatorLayout mParent;
-    private ICustomBottomSheetBehavior<View> mBehavior;
-    private View mBottomSheetView;
+    private ICustomBottomSheetBehavior<T> mBehavior;
+    private T mBottomSheetView;
 
-    public BottomSheetBehaviorRecyclerManager(CoordinatorLayout mParent, ICustomBottomSheetBehavior<View> mBehavior, View mBottomSheetView) {
+    public BottomSheetBehaviorRecyclerManager(CoordinatorLayout mParent, ICustomBottomSheetBehavior<T> mBehavior, T mBottomSheetView) {
         mViews = new ArrayList<>();
         this.mParent = mParent;
         this.mBehavior = mBehavior;

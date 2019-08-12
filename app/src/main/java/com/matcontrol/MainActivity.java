@@ -1,20 +1,21 @@
 package com.matcontrol;
 
 import android.content.Intent;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.matcontrol.control.BottomSheetBehavior;
 import com.matcontrol.control.BottomSheetBehaviorRecyclerManager;
-import com.matcontrol.control.BottomSheetBehavior_v25;
-import com.matcontrol.control.BottomSheetBehavior_v27;
-import com.matcontrol.control.BottomSheetDialog_v25;
+import com.matcontrol.control.BottomSheetDialog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void createDialogBtmSheet() {
-        BottomSheetDialog_v25 bottomSheetDialog = new BottomSheetDialog_v25(MainActivity.this);
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(MainActivity.this);
         View dialogSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_layout, null);
 
         bottomSheetDialog.setContentView(dialogSheetView);
@@ -90,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         bottomSheetDialog.setCancelable(true);
         bottomSheetDialog.setCanceledOnTouchOutside(true);
         bottomSheetDialog.getBehavior().setPeekHeight(150);
-        bottomSheetDialog.getBehavior().setState(BottomSheetBehavior_v27.STATE_COLLAPSED);
+        bottomSheetDialog.getBehavior().setState(BottomSheetBehavior.STATE_COLLAPSED);
 
 
         RecyclerAdapter mAdapterLeft = new RecyclerAdapter();
@@ -125,7 +126,11 @@ public class MainActivity extends AppCompatActivity {
         mAdapterRight.update(modelsRight);
 
         //helper to rule scrolls
-        BottomSheetBehaviorRecyclerManager manager = new BottomSheetBehaviorRecyclerManager(mParent, bottomSheetDialog.getBehavior(), bottomSheetDialog.getBottomSheetView());
+        BottomSheetBehaviorRecyclerManager manager = new BottomSheetBehaviorRecyclerManager<FrameLayout>(
+                mParent,
+                bottomSheetDialog.getBehavior(),
+                bottomSheetDialog.getBottomSheetView()
+        );
         manager.addControl(mBottomSheetRecyclerLeft);
         manager.addControl(mBottomSheetRecyclerRight);
         manager.create();
