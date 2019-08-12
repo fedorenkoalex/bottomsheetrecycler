@@ -14,16 +14,16 @@ import java.util.List;
  * Created by fedor on 21.03.2017.
  */
 
-public class BottomSheetBehaviorRecyclerManager {
+public class  BottomSheetBehaviorRecyclerManager <T extends View>{
 
     private List<View> mViews;
     private View.OnTouchListener mTouchEventListener;
 
     private CoordinatorLayout mParent;
-    private ICustomBottomSheetBehavior<View> mBehavior;
-    private View mBottomSheetView;
+    private ICustomBottomSheetBehavior<T> mBehavior;
+    private T mBottomSheetView;
 
-    public BottomSheetBehaviorRecyclerManager(CoordinatorLayout mParent, ICustomBottomSheetBehavior<View> mBehavior, View mBottomSheetView) {
+    public BottomSheetBehaviorRecyclerManager(CoordinatorLayout mParent, ICustomBottomSheetBehavior<T> mBehavior, T mBottomSheetView) {
         mViews = new ArrayList<>();
         this.mParent = mParent;
         this.mBehavior = mBehavior;
