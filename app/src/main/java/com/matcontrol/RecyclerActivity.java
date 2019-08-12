@@ -1,23 +1,24 @@
 package com.matcontrol;
 
 import android.os.Bundle;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.matcontrol.control.BottomSheetBehavior;
 import com.matcontrol.control.BottomSheetBehaviorRecyclerManager;
-import com.matcontrol.control.BottomSheetBehavior_v27;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class RecyclerActivity extends AppCompatActivity {
 
-    private BottomSheetBehavior_v27<View> mBottomSheetBehavior;
+    private BottomSheetBehavior<View> mBottomSheetBehavior;
     private View mBottomSheetView;
 
     private CoordinatorLayout mParent;
@@ -51,14 +52,14 @@ public class RecyclerActivity extends AppCompatActivity {
         mBottomSheetRecyclerRight.setLayoutManager(mLayoutManagerRight);
 
 
-        mBottomSheetBehavior = BottomSheetBehavior_v27.from(mBottomSheetView);
+        mBottomSheetBehavior = BottomSheetBehavior.from(mBottomSheetView);
 
         mBottomSheetBehavior.setPeekHeight(150);
-        mBottomSheetBehavior.setState(BottomSheetBehavior_v27.STATE_COLLAPSED);
-        mBottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior_v27.BottomSheetCallback() {
+        mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+        mBottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
             public void onStateChanged(View bottomSheet, int newState) {
-                if (newState == BottomSheetBehavior_v27.STATE_COLLAPSED) {
+                if (newState == BottomSheetBehavior.STATE_COLLAPSED) {
                     //  mBottomSheetBehavior.setPeekHeight(0);
                 }
             }

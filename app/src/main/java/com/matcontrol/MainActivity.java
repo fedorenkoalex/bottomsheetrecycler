@@ -1,23 +1,13 @@
 package com.matcontrol;
 
 import android.content.Intent;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
-import com.matcontrol.control.BottomSheetBehaviorRecyclerManager;
-import com.matcontrol.control.BottomSheetBehavior_v25;
-import com.matcontrol.control.BottomSheetBehavior_v27;
-import com.matcontrol.control.BottomSheetDialog_v25;
-
-import java.util.ArrayList;
-import java.util.List;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -73,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void createDialogBtmSheet() {
-        BottomSheetDialog_v25 bottomSheetDialog = new BottomSheetDialog_v25(MainActivity.this);
+       /* BottomSheetDialog_v25 bottomSheetDialog = new BottomSheetDialog_v25(MainActivity.this);
         View dialogSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_layout, null);
 
         bottomSheetDialog.setContentView(dialogSheetView);
@@ -128,6 +118,6 @@ public class MainActivity extends AppCompatActivity {
         BottomSheetBehaviorRecyclerManager manager = new BottomSheetBehaviorRecyclerManager(mParent, bottomSheetDialog.getBehavior(), bottomSheetDialog.getBottomSheetView());
         manager.addControl(mBottomSheetRecyclerLeft);
         manager.addControl(mBottomSheetRecyclerRight);
-        manager.create();
+        manager.create();*/
     }
 }
