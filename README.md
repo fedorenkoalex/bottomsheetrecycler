@@ -5,7 +5,8 @@ BottomSheet Multiple RecyclerView
  
  - added BottomSheetDialog support
  - fixed click issue in recycle view by @mpetlyuk
- - updated to support libs to  v27, added interface for next updates; by @RadiationX
+ - updated to support libs to  v27, added interface for next updates; 
+ - migrated to androidx by @RadiationX
 
 #### One of the solutions of multiple RecyclerView/ScrollView in BottomSheetBehavior
 #### Usage
